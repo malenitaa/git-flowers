@@ -227,7 +227,7 @@ Cada fase es un commit separado y reversible:
 ## Checklist resumen
 
 - [ ] **Vos:** desplegar `test` en Cloudflare Workers, pasar la URL
-- [ ] **Yo:** vendorizar `pixel-activity-scene` (Fase 1)
+- [x] **Yo:** vendorizar `pixel-activity-scene` (Fase 1)
 - [ ] **Yo:** migrar `js/github.js`/`js/config.js` a `test`, actualizar CSP (Fase 2)
 - [ ] **Vos:** revisar visualmente Fase 2, aprobar
 - [ ] **Yo:** modo custom `garden-streak` + migración de `js/app.js` (Fase 3)
