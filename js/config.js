@@ -50,7 +50,7 @@ GF.config = {
     STREAK_WEEKS_FOR_BLOOM: 5,
   },
 
-  STAGE_NAMES: ['Semilla', 'Brote', 'Tallo', 'Flor/Fruto'],
+  STAGE_NAMES: ['Seed', 'Sprout', 'Stem', 'Flower/Fruit'],
 
   // Cantidad de "especies" de planta disponibles. La especie de cada jardin
   // se elige de forma deterministica a partir de un hash del username, para

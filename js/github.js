@@ -44,7 +44,7 @@ GF.github = (function () {
    */
   async function fetchContributions(username) {
     if (!isValidUsername(username)) {
-      throw new Error('Nombre de usuario invalido. Usa solo letras, numeros y guiones.');
+      throw new Error('Invalid username. Use only letters, numbers, and hyphens.');
     }
 
     const cached = readCache(username);
@@ -53,25 +53,42 @@ GF.github = (function () {
     const url = GF.config.API_BASE + encodeURIComponent(username) + '?y=all';
 
     let response;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
     try {
-      response = await fetch(url, { method: 'GET', mode: 'cors', credentials: 'omit' });
+      response = await fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+        credentials: 'omit',
+        signal: controller.signal,
+      });
     } catch (err) {
-      throw new Error('No se pudo conectar con la fuente de datos. Revisa tu conexion.');
+      if (err.name === 'AbortError') {
+        throw new Error('The data source took too long to respond. Please try again.');
+      }
+      throw new Error('Could not connect to the data source. Check your connection.');
+    } finally {
+      clearTimeout(timeoutId);
     }
 
     if (response.status === 404) {
-      throw new Error('No se encontro el usuario "' + username + '" en GitHub.');
+      throw new Error('User "' + username + '" was not found on GitHub.');
     }
     if (response.status === 429) {
-      throw new Error('Demasiadas consultas por ahora. Probá de nuevo en un ratito.');
+      throw new Error('Too many requests right now. Please try again in a bit.');
     }
     if (!response.ok) {
-      throw new Error('La fuente de datos respondio con un error (' + response.status + ').');
+      throw new Error('The data source responded with an error (' + response.status + ').');
     }
 
-    const data = await response.json();
+    let data;
+    try {
+      data = await response.json();
+    } catch (err) {
+      throw new Error('The data source response is not valid JSON.');
+    }
     if (!data || !Array.isArray(data.contributions)) {
-      throw new Error('La respuesta de la fuente de datos no tiene el formato esperado.');
+      throw new Error('The data source response is not in the expected format.');
     }
 
     writeCache(username, data);

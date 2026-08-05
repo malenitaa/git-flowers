@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Git Flowers — Jardín de commits</title>
-<meta name="description" content="Convertí tu historial de commits de GitHub en un jardín pixel que crece con tu actividad real.">
+<title>Git Flowers — Commit Garden</title>
+<meta name="description" content="Turn your GitHub commit history into a pixel garden that grows with your real activity.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <!--
@@ -34,22 +34,22 @@
 
 <header>
   <h1>🌱 Git Flowers</h1>
-  <p>Tu historial de commits, convertido en un jardín pixel que crece con vos.</p>
+  <p>Your commit history, turned into a pixel garden that grows with you.</p>
 </header>
 
 <form id="gardenForm" autocomplete="off">
-  <label for="usernameInput" class="sr-only">Usuario de GitHub</label>
+  <label for="usernameInput" class="sr-only">GitHub username</label>
   <input
     id="usernameInput"
     type="text"
     name="user"
-    placeholder="usuario de GitHub"
+    placeholder="GitHub username"
     maxlength="39"
     pattern="[A-Za-z\d][A-Za-z\d\-]{0,38}"
     required
   >
-  <button type="submit">Cultivar 🌼</button>
-  <label for="yearSelect" class="sr-only">Año</label>
+  <button type="submit">Grow 🌼</button>
+  <label for="yearSelect" class="sr-only">Year</label>
   <select id="yearSelect" hidden></select>
 </form>
 
@@ -62,20 +62,20 @@
 <div id="legend"></div>
 
 <div class="stage-legend">
-  <span><i class="stage-dot stage-dot--semilla"></i> Semilla (0 commits)</span>
-  <span><i class="stage-dot stage-dot--brote"></i> Brote (1–3)</span>
-  <span><i class="stage-dot stage-dot--tallo"></i> Tallo (4–7)</span>
-  <span><i class="stage-dot stage-dot--flor"></i> Flor / fruto (8+ o racha larga)</span>
+  <span><i class="stage-dot stage-dot--semilla"></i> Seed (0 commits)</span>
+  <span><i class="stage-dot stage-dot--brote"></i> Sprout (1–3)</span>
+  <span><i class="stage-dot stage-dot--tallo"></i> Stem (4–7)</span>
+  <span><i class="stage-dot stage-dot--flor"></i> Flower / fruit (8+ or long streak)</span>
 </div>
 
-<button id="shareBtn" type="button" hidden>Compartir jardín</button>
+<button id="shareBtn" type="button" hidden>Share garden</button>
 
 <div id="tooltip" hidden></div>
 
 <footer>
-  Los datos se obtienen del contribution graph público de GitHub vía una API
-  de terceros de solo lectura, sin autenticación ni tokens.
-  100% front-end, sin backend propio. Código bajo licencia MIT.
+  Data comes from GitHub's public contribution graph via a read-only
+  third-party API, with no authentication or tokens.
+  100% front-end, no backend of its own. Code under the MIT license.
 </footer>
 
 <script src="js/config.js"></script>

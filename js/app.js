@@ -34,12 +34,12 @@ window.GF = window.GF || {};
     return GF.config.STAGE_NAMES[stage] || '';
   }
 
-  const weekFormatter = new Intl.DateTimeFormat('es-AR', { day: 'numeric', month: 'short' });
+  const weekFormatter = new Intl.DateTimeFormat('en-US', { day: 'numeric', month: 'short' });
 
   function renderYear(year) {
     const days = GF.garden.daysForYear(appState.apiData, year);
     if (days.length === 0) {
-      setStatus('No hay datos de contribuciones para ' + year + '.', 'error');
+      setStatus('No contribution data for ' + year + '.', 'error');
       return;
     }
     const plots = GF.garden.buildPlots(days);
@@ -50,14 +50,16 @@ window.GF = window.GF || {};
 
     const totalCommits = plots.reduce((sum, p) => sum + p.commits, 0);
     dom.legend.textContent =
-      'Especie: ' + plantType.name + ' · ' + totalCommits + ' commits en ' + year;
+      'Species: ' + plantType.name + ' · ' + totalCommits + ' commits in ' + year;
 
     dom.canvasWrap.hidden = false;
     dom.shareBtn.hidden = false;
   }
 
   function populateYearSelect(years, selected) {
-    dom.yearSelect.innerHTML = '';
+    while (dom.yearSelect.firstChild) {
+      dom.yearSelect.removeChild(dom.yearSelect.firstChild);
+    }
     years.forEach((year) => {
       const opt = document.createElement('option');
       opt.value = year;
@@ -69,7 +71,7 @@ window.GF = window.GF || {};
   }
 
   async function loadGarden(username) {
-    setStatus('Cultivando el jardin de ' + username + '...', 'loading');
+    setStatus('Growing ' + username + '\'s garden...', 'loading');
     dom.canvasWrap.hidden = true;
     dom.shareBtn.hidden = true;
     dom.yearSelect.hidden = true;
@@ -78,7 +80,7 @@ window.GF = window.GF || {};
       const data = await GF.github.fetchContributions(username);
       const years = GF.garden.extractYears(data);
       if (years.length === 0) {
-        setStatus('Ese usuario no tiene contribuciones publicas registradas.', 'error');
+        setStatus('That user has no public contributions recorded.', 'error');
         return;
       }
       appState.username = username;
@@ -92,7 +94,7 @@ window.GF = window.GF || {};
       updateUrl(username);
       setStatus('', null);
     } catch (err) {
-      setStatus(err.message || 'Ocurrio un error inesperado.', 'error');
+      setStatus(err.message || 'An unexpected error occurred.', 'error');
     }
   }
 
@@ -119,10 +121,10 @@ window.GF = window.GF || {};
       const from = weekFormatter.format(plot.startDate);
       const to = weekFormatter.format(plot.endDate);
       dom.tooltip.textContent =
-        'Semana del ' + from + ' al ' + to +
+        'Week of ' + from + ' to ' + to +
         ' — ' + plot.commits + (plot.commits === 1 ? ' commit' : ' commits') +
         ' (' + stageLabel(plot.stage) + ')' +
-        (plot.inLongStreak ? ' · racha larga' : '');
+        (plot.inLongStreak ? ' · long streak' : '');
     });
 
     dom.canvas.addEventListener('mouseleave', () => {
@@ -159,7 +161,7 @@ window.GF = window.GF || {};
       ev.preventDefault();
       const value = dom.usernameInput.value.trim();
       if (!GF.github.isValidUsername(value)) {
-        setStatus('Ese no parece un usuario de GitHub valido.', 'error');
+        setStatus('That doesn\'t look like a valid GitHub username.', 'error');
         return;
       }
       loadGarden(value);
@@ -173,9 +175,9 @@ window.GF = window.GF || {};
       const url = new URL(window.location.href);
       url.searchParams.set('user', appState.username);
       const ok = await copyToClipboard(url.toString());
-      dom.shareBtn.textContent = ok ? 'Copiado ✓' : 'No se pudo copiar';
+      dom.shareBtn.textContent = ok ? 'Copied ✓' : 'Could not copy';
       setTimeout(() => {
-        dom.shareBtn.textContent = 'Compartir jardin';
+        dom.shareBtn.textContent = 'Share garden';
       }, 1800);
     });
   }

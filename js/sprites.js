@@ -84,7 +84,7 @@ GF.sprites = (function () {
   const PLANT_TYPES = [
     {
       id: 0,
-      name: 'Tulipan',
+      name: 'Tulip',
       palette: Object.assign({}, GROUND_PALETTE, {
         t: '#4a8f4a', l: '#5fa85f', v: '#5fa85f',
         p: '#e8799a', P: '#f5a3bd',
@@ -101,7 +101,7 @@ GF.sprites = (function () {
     },
     {
       id: 1,
-      name: 'Arbusto de moras',
+      name: 'Blackberry Bush',
       palette: Object.assign({}, GROUND_PALETTE, {
         t: '#3f7d3f', l: '#4f9a4f', v: '#4f9a4f',
         b: '#5b4b8a', B: '#8672c2',
@@ -118,7 +118,7 @@ GF.sprites = (function () {
     },
     {
       id: 2,
-      name: 'Tomatera',
+      name: 'Tomato Plant',
       palette: Object.assign({}, GROUND_PALETTE, {
         t: '#4a8f4a', l: '#5fa85f', v: '#5fa85f',
         r: '#c94a3a', R: '#e6705c',
@@ -135,7 +135,7 @@ GF.sprites = (function () {
     },
     {
       id: 3,
-      name: 'Girasol',
+      name: 'Sunflower',
       palette: Object.assign({}, GROUND_PALETTE, {
         t: '#4a8f4a', l: '#5fa85f', v: '#5fa85f',
         y: '#e8c547', Y: '#f7de7a', c: '#8a5a2b',

@@ -49,9 +49,12 @@ respuesta en [`js/github.js`](./js/github.js).
 
 ## Lógica de crecimiento (el corazón del proyecto)
 
-Cada **parcela** del jardín representa **una semana completa** (domingo a
+Cada **parcela** del jardín representa **una semana calendario** (domingo a
 sábado, igual alineación que el grid de GitHub) — no un día — para que el
-jardín no quede sobrecargado de celdas diminutas. Esto vive en
+jardín no quede sobrecargado de celdas diminutas. Las parcelas de borde del
+año (la primera y la última) suelen ser **parciales** (menos de 7 días),
+porque el 1 de enero rara vez cae domingo — el cálculo las maneja bien, solo
+tienen menos días para acumular commits. Esto vive en
 [`js/garden.js`](./js/garden.js), documentado también inline.
 
 ```
@@ -132,7 +135,12 @@ luz de día el contraste es gratis.
   defecto se muestra el año actual (o el más reciente disponible) y el
   selector permite ver años anteriores **como jardines separados** — nunca
   todo superpuesto — para no perder rendimiento ni legibilidad con
-  usuarios de muchos años de antigüedad.
+  usuarios de muchos años de antigüedad. Efecto secundario de esto: una
+  racha real que cruza el 31 de diciembre (por ejemplo, últimas semanas de
+  un año + primeras del siguiente) se cuenta como dos rachas
+  independientes, una por año — la parte que cae en el año nuevo puede no
+  llegar a las 5 semanas necesarias para "florecer" por racha, aunque la
+  racha real sea más larga.
 - Tooltip al pasar el mouse por una parcela: muestra el rango de fechas de
   esa semana y la cantidad real de commits.
 
