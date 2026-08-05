@@ -1,101 +1,96 @@
-# 🌱 Cómo publicar tu propio Jardín de Commits (sin saber programar)
+# 🌱 How to publish your own Commit Garden (no coding needed)
 
-Esta guía es para vos si nunca usaste GitHub más allá de tener una cuenta,
-y querés tener tu propia página del jardín funcionando en internet, gratis,
-en unos minutos. No hace falta instalar nada en tu computadora ni escribir
-una sola línea de código.
+This guide is for you if you've never used GitHub beyond having an
+account, and want your own copy of the garden page live on the internet,
+for free, in a few minutes. No software to install, no code to write.
 
-## Qué vas a lograr
+## What you'll end up with
 
-Al final vas a tener un link propio, algo como:
+A link of your own, something like:
 
 ```
-https://tu-usuario.github.io/git-flowers/?user=tu-usuario
+https://your-username.github.io/git-flowers/?user=your-username
 ```
 
-que podés mandarle a quien quieras, y muestra un jardín pixel que crece
-según tu actividad real en GitHub.
+that you can send to anyone, showing a pixel garden that grows based on
+your real GitHub activity.
 
-## Paso 1 — Conseguí una copia del proyecto en tu cuenta
+## Step 1 — Get your own copy of the project
 
-1. Andá a la página del repositorio de este proyecto en GitHub (la url que
-   te compartieron).
-2. Arriba a la derecha vas a ver un botón que dice **"Fork"**. Hacé clic
-   ahí.
-3. GitHub te va a preguntar en qué cuenta crear la copia — elegí la tuya.
-4. Esperá unos segundos: ahora tenés tu propia copia del proyecto, con la
-   misma dirección pero con tu usuario adelante.
+1. Go to this project's repository page on GitHub (the URL you were
+   given).
+2. Top right, you'll see a button that says **"Fork"**. Click it.
+3. GitHub will ask which account to create the copy in — pick yours.
+4. Wait a few seconds: now you have your own copy of the project, at the
+   same address but with your username in front.
 
-> "Fork" es simplemente "copiar este proyecto a mi cuenta". No rompés nada
-> del original y no hace falta pedirle permiso a nadie.
+> "Fork" just means "copy this project to my account." You don't break
+> anything in the original and you don't need to ask anyone's permission.
 
-## Paso 2 — Activá GitHub Pages (así queda publicado en internet)
+## Step 2 — Turn on GitHub Pages (so it's live on the internet)
 
-1. En **tu copia** del repositorio, buscá la pestaña **"Settings"**
-   (arriba, junto a "Code", "Issues", etc.).
-2. En el menú de la izquierda, hacé clic en **"Pages"**.
-3. Donde dice **"Build and deployment"**, en el desplegable **"Source"**,
-   elegí **"Deploy from a branch"**.
-4. Justo abajo van a aparecer dos desplegables: elegí la rama
-   **`main`** (o `master`, la que aparezca por defecto) y la carpeta
-   **`/ (root)`**.
-5. Hacé clic en **"Save"**.
-6. Esperá 1 o 2 minutos. Si volvés a entrar a **Settings → Pages**, arriba
-   va a aparecer un cartel verde con el link de tu sitio, algo como:
+1. In **your copy** of the repository, find the **"Settings"** tab (top,
+   next to "Code", "Issues", etc.).
+2. In the left menu, click **"Pages"**.
+3. Where it says **"Build and deployment"**, in the **"Source"**
+   dropdown, choose **"Deploy from a branch"**.
+4. Two dropdowns will show up below: pick the **`main`** branch (or
+   `master`, whichever shows by default) and the **`/ (root)`** folder.
+5. Click **"Save"**.
+6. Wait 1-2 minutes. If you go back into **Settings → Pages**, a green
+   banner will show up at the top with your site's link, something like:
 
    ```
-   Your site is live at https://tu-usuario.github.io/git-flowers/
+   Your site is live at https://your-username.github.io/git-flowers/
    ```
 
-## Paso 3 — Mirá tu jardín
+## Step 3 — Check out your garden
 
-Abrí ese link. Vas a ver una cajita para escribir un usuario de GitHub.
-Escribí el usuario del que querés ver el jardín (puede ser el tuyo o el de
-cualquier persona con perfil público) y tocá **"Cultivar 🌼"**.
+Open that link. You'll see a box to type a GitHub username. Type the
+username of the garden you want to see (yours, or anyone with a public
+profile) and click **"Grow 🌼"**.
 
-Si querés armar el link directo a un jardín puntual, agregale al final
-`?user=` y el nombre de usuario, por ejemplo:
+To build a direct link to a specific garden, add `?user=` plus the
+username at the end, for example:
 
 ```
-https://tu-usuario.github.io/git-flowers/?user=malenavillaabrille
+https://your-username.github.io/git-flowers/?user=torvalds
 ```
 
-## Paso 4 — Compartilo
+## Step 4 — Share it
 
-Una vez que el jardín cargó, aparece un botón **"Compartir jardín"**. Al
-tocarlo se copia automáticamente el link a tu portapapeles, listo para
-pegarlo donde quieras (WhatsApp, Twitter/X, donde sea).
+Once the garden loads, a **"Share garden"** button appears. Clicking it
+automatically copies the link to your clipboard, ready to paste wherever
+you want (WhatsApp, Twitter/X, anywhere).
 
-## Preguntas frecuentes
+## FAQ
 
-**¿Esto le pide mi contraseña de GitHub o algún token?**
-No. La página solo lee información que ya es pública en cualquier perfil
-de GitHub (el mismo cuadrito verde que se ve en tu perfil). Nunca pide
-usuario ni contraseña ni token de acceso.
+**Does this ask for my GitHub password or a token?**
+No. The page only reads information that's already public on any GitHub
+profile (the same green squares grid you see on your profile). It never
+asks for a username, password, or access token.
 
-**¿Cuesta algo?**
-No, GitHub Pages es gratis para repositorios públicos.
+**Does it cost anything?**
+No, GitHub Pages is free for public repositories.
 
-**Puse mi usuario y no aparece nada / dice error**
-- Revisá que el nombre de usuario esté bien escrito.
-- Si tu perfil de GitHub tiene el historial de contribuciones oculto en la
-  configuración de privacidad, la página no va a poder mostrarlo (porque
-  justamente no es público).
-- Esperá un minuto y probá de nuevo: puede ser que la fuente de datos
-  esté momentáneamente ocupada.
+**I entered my username and nothing shows up / there's an error**
+- Check that the username is spelled correctly.
+- If your GitHub profile has its contribution history hidden in privacy
+  settings, the page won't be able to show it (since it's precisely not
+  public).
+- Wait a minute and try again: the data source might be momentarily busy.
 
-**¿Puedo cambiarle el nombre del sitio o los colores?**
-Sí, pero eso ya es "tocar código". Para eso te sirve el otro archivo del
-proyecto, [`README.md`](./README.md), pensado para gente que programa.
+**Can I change the site's name or colors?**
+Yes, but that means "touching code." For that, check the other project
+file, [`README.md`](./README.md), written for people who code.
 
-**¿Cómo dejo de mostrar el jardín / borro mi copia?**
-En tu repositorio (tu fork), andá a **Settings**, bajá hasta el final a la
-zona roja **"Danger Zone"** y elegí **"Delete this repository"**. Esto
-borra tu copia y el sitio deja de estar disponible.
+**How do I stop showing the garden / delete my copy?**
+In your repository (your fork), go to **Settings**, scroll down to the
+red **"Danger Zone"** section, and choose **"Delete this repository"**.
+This deletes your copy and the site stops being available.
 
-## Créditos y licencia
+## Credits and license
 
-Este proyecto es de código abierto bajo licencia MIT (ver
-[`LICENSE`](./LICENSE)): lo podés usar, copiar y modificar libremente,
-incluso para fines comerciales, siempre manteniendo el aviso de licencia
-original.
+This project is open source under the MIT license (see
+[`LICENSE`](./LICENSE)): you can use, copy, and modify it freely, even
+for commercial purposes, as long as you keep the original license notice.
